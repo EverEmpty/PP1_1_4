@@ -98,11 +98,6 @@ public class UserDaoJDBCImpl implements UserDao {
             }
             connection.setAutoCommit(false);
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
             e.printStackTrace();
         }
         return list;
